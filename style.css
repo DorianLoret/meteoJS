@@ -13,6 +13,12 @@ header {
   justify-content: space-around;
 }
 
+img {
+  width: 15%;
+  height: 15%;
+  margin: auto;
+}
+
 h1 {
   font-family: Satisfy, sans-serif;
   color: whitesmoke;
