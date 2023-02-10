@@ -26,6 +26,10 @@ h1 {
   font-size: 5em;
 }
 
+h2 {
+  font-size: 2em;
+}
+
 section,
 table {
   background: greenyellow;
@@ -58,4 +62,35 @@ tr {
 
 .img-prev {
   width: 50%;
+}
+
+.temp-container p {
+  margin: 0;
+}
+
+.temp-container figure:first-of-type p {
+  font-size: 2em;
+  width: 10%;
+  background-color: blue;
+  border-radius: 50%;
+  padding: 10px 5px;
+}
+.temp-container figure:nth-of-type(2) p {
+  font-size: 2em;
+  width: 10%;
+  background-color: red;
+  border-radius: 50%;
+  padding: 10px 5px;
+}
+.temp-container figure:nth-of-type(3) p {
+  font-size: 2em;
+  width: 10%;
+  background-color: green;
+  border-radius: 50%;
+  padding: 10px 5px;
+}
+
+figcaption {
+  padding: 0 0 25px 7px ;
+  margin-top: 10px;
 }
