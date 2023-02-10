@@ -3,7 +3,7 @@
   src: url(./src/fonts/Satisfy-Regular.ttf);
 }
 
-* {
+body {
   padding: 5px;
   background-color: rgb(1, 63, 1);
 }
@@ -23,4 +23,29 @@ h1 {
   font-family: Satisfy, sans-serif;
   color: whitesmoke;
   font-size: 5em;
+}
+
+section,
+table {
+  background: greenyellow;
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+    "a a c"
+    "b b c";
+  gap: 10px;
+}
+
+.ephemeride {
+  grid-area: a;
+}
+
+table {
+  grid-area: b;
+}
+
+section.temp {
+  grid-area: c;
 }
