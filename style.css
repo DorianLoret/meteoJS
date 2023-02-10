@@ -10,13 +10,14 @@ body {
 
 header {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 50px;
 }
 
 img {
-  width: 15%;
-  height: 15%;
-  margin: auto;
+  width: 8%;
+  height: 8%;
+  margin: auto 0;
 }
 
 h1 {
@@ -48,4 +49,13 @@ table {
 
 section.temp {
   grid-area: c;
+}
+
+td,
+tr {
+  border: solid 2px rgb(82, 65, 99);
+}
+
+.img-prev {
+  width: 50%;
 }
