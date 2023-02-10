@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Satisfy";
+  src: url(./src/fonts/Satisfy-Regular.ttf);
+}
+
+* {
+  padding: 5px;
+  background-color: rgb(1, 63, 1);
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+}
+
+h1 {
+  font-family: Satisfy, sans-serif;
+  color: whitesmoke;
+  font-size: 5em;
+}
