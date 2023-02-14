@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Satisfy";
-  src: url(./src/fonts/Satisfy-Regular.ttf);
+  src: url(/src/fonts/Satisfy-Regular.ttf);
 }
 
 body {
@@ -32,7 +32,7 @@ h2 {
 
 section,
 table {
-  background: greenyellow;
+  background: #BFECC6;
 }
 
 main {
@@ -70,22 +70,22 @@ tr {
 
 .temp-container figure:first-of-type p {
   font-size: 2em;
-  width: 10%;
-  background-color: blue;
+  width: 15%;
+  background-color: #2196F3;
   border-radius: 50%;
   padding: 10px 5px;
 }
 .temp-container figure:nth-of-type(2) p {
   font-size: 2em;
-  width: 10%;
-  background-color: red;
+  width: 15%;
+  background-color: rgb(232,100,100);
   border-radius: 50%;
   padding: 10px 5px;
 }
 .temp-container figure:nth-of-type(3) p {
   font-size: 2em;
-  width: 10%;
-  background-color: green;
+  width: 15%;
+  background-color: #7BE575;
   border-radius: 50%;
   padding: 10px 5px;
 }
@@ -94,3 +94,54 @@ figcaption {
   padding: 0 0 25px 7px ;
   margin-top: 10px;
 }
+
+fieldset p, legend, label {
+  color: whitesmoke;
+}
+
+fieldset#contact {
+  display: block;
+}
+
+fieldset .contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+fieldset label {
+  display: inline-block;
+  width: 20%;
+}
+
+.msg label {
+  vertical-align: top;
+}
+
+fieldset#contact input, textarea {
+  width: 75%;
+}
+
+fieldset#submit input, button {
+  width: 25%;
+  margin-left: 15%;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+footer {
+  color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer p, a {
+  margin: 5% 0 0 0;
+}
+
+footer a:visited {
+  color: #DAE201;
+}
+
+
+
