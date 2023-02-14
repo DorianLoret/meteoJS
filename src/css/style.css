@@ -70,21 +70,21 @@ tr {
 
 .temp-container figure:first-of-type p {
   font-size: 2em;
-  width: 15%;
+  width: 35px;
   background-color: #2196F3;
   border-radius: 50%;
   padding: 10px 5px;
 }
 .temp-container figure:nth-of-type(2) p {
   font-size: 2em;
-  width: 15%;
+  width: 35px;
   background-color: rgb(232,100,100);
   border-radius: 50%;
   padding: 10px 5px;
 }
 .temp-container figure:nth-of-type(3) p {
   font-size: 2em;
-  width: 15%;
+  width: 35px;
   background-color: #7BE575;
   border-radius: 50%;
   padding: 10px 5px;
