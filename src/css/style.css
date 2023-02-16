@@ -86,17 +86,19 @@ tr {
   justify-content: center;
   align-items: center;
 }
+
 .temp-container figure:nth-of-type(2) p {
   font-size: 3rem;
   width: 100px;
   height: 100px;
-  background-color: rgb(232,100,100);
+  background-color: rgb(232, 100, 100);
   border: solid 2px #1D3138;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .temp-container figure:nth-of-type(3) p {
   font-size: 3rem;
   width: 100px;
@@ -110,11 +112,13 @@ tr {
 }
 
 figcaption {
-  padding: 0 0 25px 7px ;
+  padding: 0 0 25px 7px;
   margin-top: 10px;
 }
 
-fieldset p, legend, label {
+fieldset p,
+legend,
+label {
   color: whitesmoke;
 }
 
@@ -137,11 +141,13 @@ fieldset label {
   vertical-align: top;
 }
 
-fieldset#contact input, textarea {
+fieldset#contact input,
+textarea {
   width: 75%;
 }
 
-fieldset#submit input, button {
+fieldset#submit input,
+button {
   width: 25%;
   margin-left: 15%;
   margin-top: 5%;
@@ -154,7 +160,8 @@ footer {
   justify-content: space-between;
 }
 
-footer p, a {
+footer p,
+a {
   margin: 5% 0 0 0;
 }
 
@@ -164,8 +171,8 @@ footer a:visited {
 
 .temp {
   width: 70%;
-margin: 0 auto;
-text-align: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
 @media screen and (max-width: 950px) {
@@ -173,7 +180,8 @@ text-align: center;
     display: block;
   }
 
-  main > *, .temp {
+  main>*,
+  .temp {
     width: 80%;
     margin: 0 auto;
   }
@@ -192,10 +200,12 @@ text-align: center;
     flex-direction: column-reverse;
     align-items: center;
   }
+
   header img {
     width: 15%;
     margin-bottom: 20px;
   }
+
   h1 {
     font-size: 3.5rem;
     margin: 0;
@@ -206,6 +216,6 @@ text-align: center;
   }
 
   footer p:nth-of-type(3) {
-  white-space: nowrap;
+    white-space: nowrap;
   }
 }

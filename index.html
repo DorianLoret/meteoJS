@@ -1,88 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>Document</title>
-    <link rel="stylesheet" href="./src/css/style.css" >
-  </head>
-  <body>
-    <header>
-      <img src="./src/img/sun1.png" alt="sun" >
 
-      <h1>Ma station météo</h1>
-    </header>
-    <main>
-      <section class="ephemeride">
-        <h2>Éphéméride</h2>
-        <p>Nous somme le <span>10/02/2023</span></p>
-        <p>Il est <span>22:20:12</span></p>
-        <p>Le soleil se lève à <span>hh:mm:ss</span></p>
-        <p>Aujourd'hui nous fêtons les <span>Julien, Miguel</span></p>
-      </section>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MeteoJS</title>
+  <link rel="stylesheet" href="./src/css/style.css">
+</head>
 
-      <table cellspacing="0">
-        <tbody>
-          <tr>
-            <td>Mercredi</td>
-            <td>
-              <img
-                src="./src/img/eclaircies.png"
-                alt="eclaircies"
-                class="img-prev"
-              >
-            </td>
-            <td>Aujourd'hui il y a des éclaircies</td>
-          </tr>
-          <tr>
-            <td>Jeudi</td>
-            <td>
-              <img src="./src/img/ensoleille.png" alt="ensoleille"
-              class="img-prev" >
-            </td>
-            <td>Demain le temps sera ensoleillé</td>
-          </tr>
-          <tr>
-            <td>Vendredi</td>
-            <td>
-              <img src="./src/img/ensoleille.png" alt="ensoleille"
-              class="img-prev" >
-            </td>
-            <td>Vendredi le temps sera ensoleillé</td>
-          </tr>
-        </tbody>
-      </table>
+<body>
+  <header>
+    <img src="./src/img/sun1.png" alt="sun">
 
-      <section class="temp">
-        <h2>Températures</h2>
-        <div class="temp-container">
-          <figure>
-            <p>12</p>
-            <figcaption>Min</figcaption>
-          </figure>
-          <figure>
-            <p>25</p>
-            <figcaption>Max</figcaption>
-          </figure>
-          <figure>
-            <p>18</p>
-            <figcaption>Moyenne</figcaption>
-          </figure>
-        </div>
-      </section>
-    </main>
+    <h1>Ma station météo</h1>
+  </header>
+  <main>
+    <section class="ephemeride">
+      <h2>Éphéméride</h2>
+      <p>Nous somme le <span>10/02/2023</span></p>
+      <p>Il est <span>22:20:12</span></p>
+      <p>Le soleil se lève à <span>hh:mm:ss</span></p>
+      <p>Aujourd'hui nous fêtons les <span>Julien, Miguel</span></p>
+    </section>
 
-    <footer>
-      <p>&copy;Moâ</p>
-      <p>Ça vous plaît ? C'est Moâ qui l'ai fait !</p>
-      <p>
-        Contactez
+    <table cellspacing="0">
+      <tbody>
+        <tr>
+          <td>Mercredi</td>
+          <td>
+            <img src="./src/img/eclaircies.png" alt="eclaircies" class="img-prev">
+          </td>
+          <td>Aujourd'hui il y a des éclaircies</td>
+        </tr>
+        <tr>
+          <td>Jeudi</td>
+          <td>
+            <img src="./src/img/ensoleille.png" alt="ensoleille" class="img-prev">
+          </td>
+          <td>Demain le temps sera ensoleillé</td>
+        </tr>
+        <tr>
+          <td>Vendredi</td>
+          <td>
+            <img src="./src/img/ensoleille.png" alt="ensoleille" class="img-prev">
+          </td>
+          <td>Vendredi le temps sera ensoleillé</td>
+        </tr>
+      </tbody>
+    </table>
 
-        <a href="./contact.html">Moâ</a>
-      </p>
-    </footer>
+    <section class="temp">
+      <h2>Températures</h2>
+      <div class="temp-container">
+        <figure>
+          <p>12</p>
+          <figcaption>Min</figcaption>
+        </figure>
+        <figure>
+          <p>25</p>
+          <figcaption>Max</figcaption>
+        </figure>
+        <figure>
+          <p>18</p>
+          <figcaption>Moyenne</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
 
-    <script src="./src/js/index.js"></script>
-  </body>
+  <footer>
+    <p>&copy;Moâ</p>
+    <p>Ça vous plaît ? C'est Moâ qui l'ai fait !</p>
+    <p>
+      Contactez
+
+      <a href="./contact.html">Moâ</a>
+    </p>
+  </footer>
+
+  <script src="./src/js/index.js"></script>
+</body>
+
 </html>
