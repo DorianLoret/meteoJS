@@ -1,6 +1,8 @@
 let sunrise;
 let meteoData = [];
 let saintsData = [];
+let today = new Date();
+
 
 const stime = document.querySelector("body > main > section.ephemeride > p:nth-child(3) > span");
 const stoday = document.querySelector("body > main > section.ephemeride > p:nth-child(2) > span");
@@ -36,7 +38,7 @@ async function fetchMeteoData() {
 
 
 function displayDate() {
-    let today = new Date();
+    today = new Date();
     let cseconds;
     let cminutes;
     let chours;
@@ -60,14 +62,13 @@ async function fetchSaintsData() {
 const displayPrevisions = () => {
 
     let days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
-    let d = new Date();
     const prevtoday = document.querySelector("body > main > table > tbody > tr:nth-child(1) > td:nth-child(1)");
     const prevtomorrow = document.querySelector("body > main > table > tbody > tr:nth-child(2) > td:nth-child(1)");
     const prevafter = document.querySelector("body > main > table > tbody > tr:nth-child(3) > td:nth-child(1)");
 
-    prevtoday.innerHTML = days[d.getDay()];
-    prevtomorrow.innerHTML = days[d.getDay() + 1];
-    prevafter.innerHTML = days[d.getDay() + 2];
+    prevtoday.innerHTML = days[today.getDay()];
+    prevtomorrow.innerHTML = days[today.getDay() + 1];
+    prevafter.innerHTML = days[today.getDay() + 2];
 
 
 
