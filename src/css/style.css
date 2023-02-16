@@ -45,10 +45,19 @@ main {
 
 .ephemeride {
   grid-area: a;
+  font-size: 1.3rem;
 }
 
 table {
   grid-area: b;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+table img {
+  width: 65%;
+  display: flex;
+  margin: 0 auto;
 }
 
 section.temp {
@@ -60,34 +69,43 @@ tr {
   border: solid 2px rgb(82, 65, 99);
 }
 
-.img-prev {
-  width: 50%;
+.temp-container p {
+  margin: 0 auto;
 }
 
-.temp-container p {
-  margin: 0;
-}
 
 .temp-container figure:first-of-type p {
-  font-size: 2em;
-  width: 35px;
+  font-size: 3rem;
+  width: 100px;
+  height: 100px;
   background-color: #2196F3;
   border-radius: 50%;
-  padding: 10px 5px;
+  border: solid 2px #1D3138;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .temp-container figure:nth-of-type(2) p {
-  font-size: 2em;
-  width: 35px;
+  font-size: 3rem;
+  width: 100px;
+  height: 100px;
   background-color: rgb(232,100,100);
+  border: solid 2px #1D3138;
   border-radius: 50%;
-  padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .temp-container figure:nth-of-type(3) p {
-  font-size: 2em;
-  width: 35px;
+  font-size: 3rem;
+  width: 100px;
+  height: 100px;
   background-color: #7BE575;
+  border: solid 2px #1D3138;
   border-radius: 50%;
-  padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 figcaption {
@@ -143,5 +161,9 @@ footer a:visited {
   color: #DAE201;
 }
 
-
+.temp {
+  width: 70%;
+margin: 0 auto;
+text-align: center;
+}
 
