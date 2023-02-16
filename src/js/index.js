@@ -1,6 +1,9 @@
 let sunrise;
 let meteoData = [];
 let saintsData = [];
+
+const stime = document.querySelector("body > main > section.ephemeride > p:nth-child(3) > span");
+const stoday = document.querySelector("body > main > section.ephemeride > p:nth-child(2) > span");
 const psunrise = document.querySelector("body > main > section.ephemeride > p:nth-child(4) > span");
 const ptempmax = document.querySelector("body > main > section.temp > div > figure:nth-child(2) > p");
 const ptempmin = document.querySelector("body > main > section.temp > div > figure:nth-child(1) > p");
@@ -25,9 +28,27 @@ async function fetchMeteoData() {
     console.log(meteoData);
 
 
+    fetchsunrise();
+
+
 
 }
 
+
+function displayDate() {
+    let today = new Date();
+    let cseconds;
+    let cminutes;
+    let chours;
+
+    today.getSeconds() < 10 ? cseconds = ":0" : cseconds = ":";
+    today.getMinutes() < 10 ? cminutes = ":0" : cminutes = ":";
+    today.getHours() < 10 ? chours = ":0" : chours = "";
+
+    stoday.innerHTML = new Date().toLocaleDateString();
+    stime.innerHTML = chours + today.getHours() + cminutes + today.getMinutes() + cseconds + today.getSeconds();
+
+}
 
 
 async function fetchSaintsData() {
@@ -36,5 +57,27 @@ async function fetchSaintsData() {
         .then((data) => saintsData = data)
 }
 
+const displayPrevisions = () => {
+
+    let days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+    let d = new Date();
+    const prevtoday = document.querySelector("body > main > table > tbody > tr:nth-child(1) > td:nth-child(1)");
+    const prevtomorrow = document.querySelector("body > main > table > tbody > tr:nth-child(2) > td:nth-child(1)");
+    const prevafter = document.querySelector("body > main > table > tbody > tr:nth-child(3) > td:nth-child(1)");
+
+    prevtoday.innerHTML = days[d.getDay()];
+    prevtomorrow.innerHTML = days[d.getDay() + 1];
+    prevafter.innerHTML = days[d.getDay() + 2];
+
+
+
+}
+
+
 
 fetchMeteoData();
+displayPrevisions();
+
+
+
+setInterval(displayDate, 1000);
