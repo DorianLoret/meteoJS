@@ -68,8 +68,9 @@ const displayPrevisions = () => {
 
     prevtoday.innerHTML = days[today.getDay()];
     prevtomorrow.innerHTML = days[today.getDay() + 1];
-    prevafter.innerHTML = days[today.getDay() + 2];
+    today.getDay() + 2 >= 7 ? prevafter.innerHTML = days[0] : prevafter.innerHTML = days[today.getDay() + 2];
 
+    console.log(today.getDay() + 2);
 
 
 }
