@@ -27,7 +27,6 @@ async function fetchMeteoData() {
     ptempmin.innerHTML = meteoData[0].tmin;
     ptempav.innerHTML = Math.round((meteoData[0].tmax + meteoData[0].tmin) / 2);
 
-    console.log(meteoData);
 
 
     fetchsunrise();
@@ -54,9 +53,19 @@ function displayDate() {
 
 
 async function fetchSaintsData() {
+
+    let span = document.querySelector("body > main > section.ephemeride > p:nth-child(5) > span");
+
     await fetch("https://nominis.cef.fr/json/nominis.php")
         .then((res) => res.json())
-        .then((data) => saintsData = data)
+        .then((data) => saintsData = data.response.prenoms.majeur)
+
+    span.innerHTML = Object.keys(saintsData).map(
+        (saint) => saint
+    )
+        .join(",");
+
+
 }
 
 const displayPrevisions = () => {
@@ -70,7 +79,7 @@ const displayPrevisions = () => {
     prevtomorrow.innerHTML = days[today.getDay() + 1];
     today.getDay() + 2 >= 7 ? prevafter.innerHTML = days[0] : prevafter.innerHTML = days[today.getDay() + 2];
 
-    console.log(today.getDay() + 2);
+
 
 
 }
@@ -79,6 +88,7 @@ const displayPrevisions = () => {
 
 fetchMeteoData();
 displayPrevisions();
+fetchSaintsData();
 
 
 
