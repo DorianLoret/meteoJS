@@ -39,7 +39,7 @@ async function fetchMeteoData() {
     ptempmin.innerHTML = meteoData[0].tmin;
     ptempav.innerHTML = Math.round((meteoData[0].tmax + meteoData[0].tmin) / 2);
 
-    console.log(meteoData[0].weather);
+
 
 
 
@@ -106,7 +106,8 @@ async function fetchSaintsData() {
     span.innerHTML = Object.keys(saintsData).map(
         (saint) => saint
     )
-        .join(",");
+        .join(", ");
+
 
 
 }
