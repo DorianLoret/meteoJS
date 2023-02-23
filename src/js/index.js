@@ -1,5 +1,4 @@
 let sunrise;
-let meteoData = [];
 let saintsData = [];
 let today = new Date();
 
@@ -11,8 +10,8 @@ const ptempmax = document.querySelector("body > main > section.temp > div > figu
 const ptempmin = document.querySelector("body > main > section.temp > div > figure:nth-child(1) > p");
 const ptempav = document.querySelector("body > main > section.temp > div > figure:nth-child(3) > p");
 
-async function fetchsunrise() {
-    await fetch("https://api.meteo-concept.com/api/ephemeride/0?token=6420e2b831dad423bc7ba0412ce1a74f8f094153f4b2ea617612d0c72b7e8ead&insee=31555").then((res) => res.json())
+async function fetchsunrise(insee = 31555) {
+    await fetch(`https://api.meteo-concept.com/api/ephemeride/0?token=6420e2b831dad423bc7ba0412ce1a74f8f094153f4b2ea617612d0c72b7e8ead&insee=${insee}`).then((res) => res.json())
         .then((data) => sunrise = data.ephemeride.sunrise)
 
     psunrise.innerHTML = sunrise;
@@ -24,20 +23,23 @@ async function displayPrevText() {
     const utils = await import("./utils.js");
 
     for (let i = 0; i < 3; i++) {
-        document.querySelector(`body > main > table > tbody > tr:nth-child(${i + 1}) > td:nth-child(3)`).innerHTML = utils.prevText(meteoData[i].weather);
+        document.querySelector(`body > main > table > tbody > tr:nth-child(${i + 1}) > td:nth-child(3)`).innerHTML = utils.prevText(citydata.forecast[i].weather);
     }
 }
 
 
-async function fetchMeteoData() {
+async function fetchMeteoData(insee = 31555) {
 
 
-    await fetch("https://api.meteo-concept.com/api/forecast/daily?token=6420e2b831dad423bc7ba0412ce1a74f8f094153f4b2ea617612d0c72b7e8ead&insee=31555").then((res) => res.json())
-        .then((data) => meteoData = data.forecast)
+    await fetch(`https://api.meteo-concept.com/api/forecast/daily?token=6420e2b831dad423bc7ba0412ce1a74f8f094153f4b2ea617612d0c72b7e8ead&insee=${insee}`).then((res) => res.json())
+        .then((data) => citydata = data) // meteoData = data.forecast
 
-    ptempmax.innerHTML = meteoData[0].tmax;
-    ptempmin.innerHTML = meteoData[0].tmin;
-    ptempav.innerHTML = Math.round((meteoData[0].tmax + meteoData[0].tmin) / 2);
+
+    document.querySelector("body > header > h1 > span").textContent = citydata.city.name;
+
+    ptempmax.innerHTML = citydata.forecast[0].tmax;
+    ptempmin.innerHTML = citydata.forecast[0].tmin;
+    ptempav.innerHTML = Math.round((citydata.forecast[0].tmax + citydata.forecast[0].tmin) / 2);
 
 
 
@@ -49,20 +51,20 @@ async function fetchMeteoData() {
 
     for (let i = 0; i < 3; i++) {
 
-        if (meteoData[i].weather == 0) {
+        if (citydata.forecast[i].weather == 0) {
 
             document.querySelector(`body > main > table > tbody > tr:nth-child(${i + 1}) > td:nth-child(2) > img`).src = "./src/img/ensoleille.png";
         }
-        else if (meteoData[i].weather == 1) {
+        else if (citydata.forecast[i].weather == 1) {
             document.querySelector(`body > main > table > tbody > tr:nth-child(${i + 1}) > td:nth-child(2) > img`).src = "./src/img/eclaircies.png";
         }
-        else if (meteoData[i].weather > 1 && meteoData[i].weather <= 7) {
+        else if (citydata.forecast[i].weather > 1 && citydata.forecast[i].weather <= 7) {
             document.querySelector(`body > main > table > tbody > tr:nth-child(${i + 1}) > td:nth-child(2) > img`).src = "./src/img/partly_cloudy_day_sun_clouds_weather_icon_177560.png"
         }
-        else if (meteoData[i].weather > 7 && meteoData[i].weather <= 78) {
+        else if (citydata.forecast[i].weather > 7 && citydata.forecast[i].weather <= 78) {
             document.querySelector(`body > main > table > tbody > tr:nth-child(${i + 1}) > td:nth-child(2) > img`).src = "./src/img/heavy_rain.png"
         }
-        else if (meteoData[i].weather > 100 && meteoData[i].weather <= 142) {
+        else if (citydata.forecast[i].weather > 100 && citydata.forecast[i].weather <= 142) {
             document.querySelector(`body > main > table > tbody > tr:nth-child(${i + 1}) > td:nth-child(2) > img`).src = "./src/img/orages.png"
         }
         else {
@@ -125,7 +127,21 @@ const displayPrevisions = () => {
 
 }
 
+function meteoInsee() {
+    const inputtxt = document.querySelector("#insee");
+    const inputsbt = document.querySelector("body > header > form > input[type=submit]:nth-child(3)");
 
+    inputsbt.addEventListener("click", function (e) {
+        let insee = inputtxt.value;
+        e.preventDefault();
+
+        fetchsunrise(insee);
+        fetchMeteoData(insee);
+
+    })
+}
+
+meteoInsee();
 
 fetchMeteoData();
 displayPrevisions();

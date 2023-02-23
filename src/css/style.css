@@ -219,3 +219,7 @@ footer a:visited {
     white-space: nowrap;
   }
 }
+
+header form {
+  margin: auto;
+}
