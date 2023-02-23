@@ -87,7 +87,7 @@ function displayDate() {
 
     today.getSeconds() < 10 ? cseconds = ":0" : cseconds = ":";
     today.getMinutes() < 10 ? cminutes = ":0" : cminutes = ":";
-    today.getHours() < 10 ? chours = ":0" : chours = "";
+    today.getHours() < 10 ? chours = "0" : chours = "";
 
     stoday.innerHTML = new Date().toLocaleDateString();
     stime.innerHTML = chours + today.getHours() + cminutes + today.getMinutes() + cseconds + today.getSeconds();
