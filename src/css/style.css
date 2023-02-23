@@ -223,3 +223,8 @@ footer a:visited {
 header form {
   margin: auto;
 }
+
+header form label {
+  display: inline-block;
+  padding: 20px;
+}
