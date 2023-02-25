@@ -122,8 +122,20 @@ const displayPrevisions = () => {
     const prevafter = document.querySelector("body > main > table > tbody > tr:nth-child(3) > td:nth-child(1)");
 
     prevtoday.innerHTML = days[today.getDay()];
-    prevtomorrow.innerHTML = days[today.getDay() + 1];
-    today.getDay() + 2 >= 7 ? prevafter.innerHTML = days[0] : prevafter.innerHTML = days[today.getDay() + 2];
+
+    console.log(today.getDay());
+    if (today.getDay() + 2 == 8) {
+        prevtomorrow.innerHTML = days[0];
+        prevafter.innerHTML = days[1];
+    }
+    else if (today.getDay() + 2 == 9) {
+        prevtomorrow.innerHTML = days[1];
+        prevafter.innerHTML = days[2];
+    } else if (today.getDay() < 6) {
+        prevtomorrow.innerHTML = days[today.getDay() + 1];
+        prevafter.innerHTML = days[today.getDay() + 2];
+    }
+
 
 }
 
